@@ -1,0 +1,2 @@
+TOKEN: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
+打包命令：jpackage --type exe --name 力值工具 --app-version 1.0 --input . --dest . --main-jar .\forceTool.jar --icon F:\forceTool\src\main\resources\icons\favicon.ico  --main-class com.lijilin.forcetool.MainApp --module-path "C:\Program Files\Java\javafx-jmods-17.0.6" --add-modules javafx.controls,javafx.fxml --win-dir-chooser --win-shortcut --win-menu --win-menu-group forceTool

@@ -1,0 +1,1 @@
+jpackage --name forceTool --type exe --input . --dest . --main-jar .\forceTool.jar --main-class com.lijilin.forcetool.MainApp --module-path "C:\Program Files\Java\javafx-jmods-17.0.6" --add-modules javafx.controls,javafx.fxml --win-shortcut --win-menu --icon “H:\forceTool\src\main\resources\icons\favicon.ico” --win-dir-chooser

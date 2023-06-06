@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="1118.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lijilin.forcetool.HomeController">
+   <children>
+      <BorderPane prefHeight="737.0" prefWidth="1118.0">
+         <top>
+            <HBox prefHeight="69.0" prefWidth="1118.0" style="-fx-background-color: #930093;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="69.0" prefWidth="296.0">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../icons/force-64.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label prefHeight="67.0" prefWidth="160.0" text="ForceTool" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee UI Semilight" size="35.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <MenuBar prefHeight="69.0" prefWidth="674.0" style="-fx-background-color: #930093;" stylesheets="@../../../css/menuBar.css">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="文件">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#showSetting" text="设置" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="帮助">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </MenuBar>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="668.0" prefWidth="296.0" style="-fx-background-color: #FFBFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="384.0" prefWidth="296.0">
+                     <children>
+                        <AnchorPane prefHeight="34.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="36.0" layoutY="15.0" text="编号" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="uid" layoutX="85.0" layoutY="8.0" prefHeight="28.0" prefWidth="198.0" promptText="请输入编号">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="34.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="23.0" layoutY="10.0" text="共试件" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="testCount" layoutX="85.0" layoutY="7.0" prefHeight="29.0" prefWidth="198.0" promptText="请输入共试样总件数">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="36.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="25.0" layoutY="10.0" text="最大力" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="maxForce" layoutX="85.0" layoutY="7.0" prefHeight="32.0" prefWidth="198.0" promptText="请输入最大力值">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="34.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="26.0" layoutY="9.0" text="屈服力" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="yieldForce" layoutX="85.0" layoutY="6.0" prefHeight="29.0" prefWidth="198.0" promptText="请输入屈服力">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="38.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="15.0" layoutY="10.0" text="随机时间" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="randomTime" layoutX="85.0" layoutY="7.0" prefHeight="29.0" prefWidth="198.0" promptText="测试应力时间">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="36.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="19.0" layoutY="10.0" text="检测日期" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <DatePicker fx:id="checkTime" layoutX="85.0" layoutY="7.0" prefHeight="29.0" prefWidth="198.0" promptText="选择检测日期" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="36.0" prefWidth="227.0">
+                           <children>
+                              <Label layoutX="7.0" layoutY="12.0" text="试验机型号" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <ChoiceBox fx:id="mode" layoutX="85.0" layoutY="7.0" prefHeight="29.0" prefWidth="198.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="69.0" prefWidth="296.0">
+                           <children>
+                              <Spinner fx:id="timeNoise" layoutX="14.0" layoutY="27.0" prefHeight="24.0" prefWidth="117.0" />
+                              <Spinner fx:id="forceNoise" layoutX="146.0" layoutY="28.0" prefHeight="24.0" prefWidth="117.0" />
+                              <Text layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="时间噪音" />
+                              <Text layoutX="149.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="力值噪音" />
+                           </children>
+                        </AnchorPane>
+                     </children></VBox>
+                  <TreeView fx:id="stencilTreeView" prefHeight="387.0" prefWidth="296.0" />
+               </children></VBox>
+         </left>
+         <center>
+            <AnchorPane prefHeight="668.0" prefWidth="891.0" BorderPane.alignment="CENTER">
+               <children>
+                   <LineChart fx:id="chartLine" layoutX="3.0" layoutY="162.0" prefHeight="497.0" prefWidth="805.0" stylesheets="@../../../css/LineChart.css" title="力值时间曲线">
+                       <xAxis>
+                           <NumberAxis side="BOTTOM" />
+                       </xAxis>
+                       <yAxis>
+                           <NumberAxis side="LEFT" />
+                       </yAxis>
+                   </LineChart>
+                  <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#randomDataClcik" prefHeight="39.0" prefWidth="132.0" style="-fx-background-color: green;" text="开始生成随机数据" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="exportBtn" layoutX="162.0" layoutY="14.0" mnemonicParsing="false" onAction="#exportDataBtn" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #FF5809;" text="导出数据" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Label layoutX="304.0" layoutY="16.0" prefHeight="34.0" prefWidth="80.0" text="保存路径">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="savePath" layoutX="387.0" layoutY="14.0" prefHeight="38.0" prefWidth="284.0" promptText="请选择保存的位置">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Pane layoutX="1.0" layoutY="76.0" prefHeight="34.0" prefWidth="822.0">
+                     <children>
+                        <Label layoutX="11.0" layoutY="7.0" text="最大力值:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabModelMxaForce" fill="RED" layoutX="77.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="126.0" layoutY="8.0" text="屈服力:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabModelYieldForce" fill="RED" layoutX="178.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="229.0" layoutY="9.0" text="时间:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabModelTime" fill="RED" layoutX="272.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Text>
+                        <Label layoutX="343.0" layoutY="9.0" prefHeight="19.0" prefWidth="39.0" text="编号:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabModelUid" fill="RED" layoutX="380.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="487.0" layoutY="9.0" prefHeight="19.0" prefWidth="72.0" text="检测日期：">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabModelCheckTime" fill="RED" layoutX="560.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1.0" layoutY="130.0" prefHeight="34.0" prefWidth="822.0">
+                     <children>
+                        <Label layoutX="11.0" layoutY="7.0" text="最大力值:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabRandMxaForce" fill="#3300ff" layoutX="77.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="126.0" layoutY="8.0" text="屈服力:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabRandYieldForce" fill="#3300ff" layoutX="178.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="229.0" layoutY="9.0" text="时间:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabRandTime" fill="#3300ff" layoutX="272.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Text>
+                        <Label layoutX="343.0" layoutY="9.0" prefHeight="19.0" prefWidth="39.0" text="编号:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabRandUid" fill="#3300ff" layoutX="380.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="487.0" layoutY="9.0" prefHeight="19.0" prefWidth="80.0" text="检测日期：">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="tabRandCheckTime" fill="#3300ff" layoutX="560.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Label layoutX="11.0" layoutY="60.0" text="选择的参考模版" textFill="RED">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="112.0" text="随机生成的数据" textFill="#3300ff">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="675.0" layoutY="13.0" mnemonicParsing="false" onAction="#selectSavePathBtn" prefHeight="38.0" prefWidth="63.0" style="-fx-background-color: green;" text="选择" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

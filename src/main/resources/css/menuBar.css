@@ -1,0 +1,11 @@
+.menu-bar {
+    -fx-background-color:  #930093;
+    -fx-text-fill: white;
+}
+.menu .label {
+    -fx-text-fill: white;
+}
+.menu-item .label
+{
+    -fx-text-fill: black;
+}
